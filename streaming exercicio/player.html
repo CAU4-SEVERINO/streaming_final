@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>GARIBALDO TV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body class="player-page">
+    <header>
+        <a href="index.html" class="back"> <i class="fa-solid fa-left-long"></i>Voltar</a>
+    </header>
+
+    <main>
+        <div class="video-container">
+            <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </main>
+
+
+    <!-- essa parte do script boa parte realmente foi IA porque com o iframe estava aparecendo que o video estava indisponivel, mas era o mesmo link, tudo certinho, mas ainda sim dava erro, desta forma eu consegui resolver um pouco o problema e o site esta funcionando normalmente, mas o resto do site foi eu quem fez, apenas essa parte do script que eu tive que usar (não fui na mesa da patricia porque estava sempre lotado, Cesar fez falta hoje.) -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get("video");
+
+        const videos = {
+    1: "6MIhUj0Utr0",
+    2: "4Qs_ORptaw8",
+    3: "h9d1SkN4q04",
+    4: "XJ0kBLCCE7c",
+    5: "W_Wm5z0zFM4",
+    6: "YdEq2nVhBgk",
+    7: "tDWeCwF-1dA",
+    8: "yTHOIpFmTRA",
+    9: "_MrljxK9a-Q",
+    10: "dKWpPPMiuYY",
+    11: "gSWFF1dQTIs",
+    12: "jYlr3G9yB8s"
+        };
+        const videoFrame = document.getElementById("videoFrame");
+if (videos[videoId]) {
+    videoFrame.src = "https://www.youtube.com/embed/" + videos[videoId];
+}
+
+        
+    </script>
+</body>
+</html>
